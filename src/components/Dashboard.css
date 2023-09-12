@@ -1,0 +1,101 @@
+.home {
+    position: relative;
+    width: 100%;
+    padding: 1rem;
+}
+
+.headerwrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 2rem;
+    background-color: var(--primary-color);
+    overflow: hidden;
+}
+
+.user {
+    display: flex;
+    justify-content: center;
+    gap: 10;
+}
+.headerwrapper i {
+    color: var(--text-color);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.headerwrapper i:hover {
+    background-color: var(--primary-color);
+    border-radius: 15%;
+}
+
+/* ************CARDS************** */
+
+.cards {
+    display: flex;
+    justify-content: space-evenly;
+}
+.cards h3 {
+    text-align: center;
+    font-size: 45px;
+}
+.cards h3:hover {
+    transition: var(--tran-03);
+}
+.allcards {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.card {
+    overflow: hidden;
+    background-color: #090345;
+    color: white;
+    text-align: center;
+    width: 240px;
+    height: 140px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
+    margin: 2rem;
+    transform: var(--tran-03);
+}
+.card:hover {
+    box-shadow: 5px 15px 25px black;
+}
+
+body.dark {
+    color: white;
+}
+
+body.dark .card:hover {
+    box-shadow: 5px 2px white;
+}
+body.dark .card,
+body.dark .graph {
+    background-color: #242526;
+}
+/* ***********************CARDS ROW 1*********** */
+
+.graph {
+    overflow: hidden;
+    background-color: #090345;
+    text-align: center;
+    width: 440px;
+    height: 440px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
+    margin: 2rem;
+    transform: var(--tran-03);
+}
