@@ -1,7 +1,12 @@
 import React from "react";
 import "./Dashboard.css";
+import ChatIcon from "@mui/icons-material/Chat";
+import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
+import LogoutIcon from "@mui/icons-material/Logout";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import LightModeIcon from "@mui/icons-material/LightMode";
 
-const Dashboard = () => {
+const Dashboard = ({ isDarkMode, onModeToggle }) => {
     return (
         <div>
             <div className="home">
@@ -12,31 +17,22 @@ const Dashboard = () => {
                     <div className="user">
                         <div className="chat">
                             <a href="#">
-                                <i className="material-symbols-outlined icons">
-                                    chat
-                                </i>
+                                <ChatIcon />
                             </a>
                         </div>
                         <div className="notification">
                             <a href="#">
-                                <i className="material-symbols-outlined icons">
-                                    notifications_active
-                                </i>
+                                <NotificationsActiveIcon />
                             </a>
                         </div>
                         <div className="logout">
-                            <a
-                                href="
-                #"
-                            >
-                                <i className="material-symbols-outlined icons">
-                                    logout
-                                </i>
+                            <a href="#">
+                                <LogoutIcon />
                             </a>
                         </div>
                     </div>
-                </div>{" "}
-                {/*  header */}
+                </div>
+                {/* header */}
                 <div className="cards">
                     <div className="allcards">
                         <div className="card">
@@ -52,9 +48,21 @@ const Dashboard = () => {
                             <div className="info">Videos</div>
                         </div>
                     </div>
-                </div>{" "}
+                </div>
                 {/* cards */}
                 <div className="graph"></div>
+            </div>
+            <div className="mode-toggle">
+                <div className={`moon ${isDarkMode ? "dark" : ""}`}>
+                    <DarkModeIcon />
+                    <LightModeIcon />
+                </div>
+                <span className="text mode-text suns">
+                    {isDarkMode ? "Light mode" : "Dark Mode"}
+                </span>
+                <div className="toggleswitch" onClick={onModeToggle}>
+                    <span className="switch"></span>
+                </div>
             </div>
         </div>
     );

@@ -1,17 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Sidebar.css";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import FullCoverageIcon from "@mui/icons-material/RoundedCorner";
+import MonitoringIcon from "@mui/icons-material/Analytics";
+import BugReportIcon from "@mui/icons-material/BugReport";
+import WebAssetIcon from "@mui/icons-material/Web";
+import TranslateIcon from "@mui/icons-material/Translate";
+import FilterAltIcon from "@mui/icons-material/FilterAlt";
+import DeleteIcon from "@mui/icons-material/Delete";
+import SettingsIcon from "@mui/icons-material/Settings";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import LightModeIcon from "@mui/icons-material/LightMode";
 
 const Sidebar = () => {
+    const [isSidebarClosed, setSidebarClosed] = useState(false);
+    const [isDarkMode, setDarkMode] = useState(false);
+
+    const toggleSidebar = () => {
+        setSidebarClosed(!isSidebarClosed);
+    };
+
+    const toggleMode = () => {
+        setDarkMode(!isDarkMode);
+    };
+
     return (
         <div>
-            <nav className="sidebar close">
+            <nav className={`sidebar ${isSidebarClosed ? "close" : ""}`}>
                 <header>
                     <div className="image-text">
                         <span className="text">Direct</span>
+                        <ChevronRightIcon onClick={toggleSidebar} />
                     </div>
-                    <i className="material-symbols-outlined toggle">
-                        chevron_right
-                    </i>
                 </header>
                 <div className="menubar">
                     <div className="menu">
@@ -26,9 +46,7 @@ const Sidebar = () => {
                             </li>
                             <li className="navlink">
                                 <a href="#">
-                                    <i className="material-symbols-outlined icons">
-                                        full_coverage
-                                    </i>
+                                    <FullCoverageIcon />
                                     <span className="text nav-text">
                                         News History
                                     </span>
@@ -36,9 +54,7 @@ const Sidebar = () => {
                             </li>
                             <li className="navlink">
                                 <a href="#">
-                                    <i className="material-symbols-outlined icons">
-                                        monitoring
-                                    </i>
+                                    <MonitoringIcon />
                                     <span className="text nav-text">
                                         Analysis
                                     </span>
@@ -46,9 +62,7 @@ const Sidebar = () => {
                             </li>
                             <li className="navlink">
                                 <a href="#">
-                                    <i className="material-symbols-outlined icons">
-                                        bug_report
-                                    </i>
+                                    <BugReportIcon />
                                     <span className="text nav-text">
                                         Performances
                                     </span>
@@ -56,9 +70,7 @@ const Sidebar = () => {
                             </li>
                             <li className="navlink">
                                 <a href="#">
-                                    <i className="material-symbols-outlined icons">
-                                        web_asset
-                                    </i>
+                                    <WebAssetIcon />
                                     <span className="text nav-text">
                                         Websites
                                     </span>
@@ -66,9 +78,7 @@ const Sidebar = () => {
                             </li>
                             <li className="navlink">
                                 <a href="#">
-                                    <i className="material-symbols-outlined icons">
-                                        translate
-                                    </i>
+                                    <TranslateIcon />
                                     <span className="text nav-text">
                                         Languages
                                     </span>
@@ -84,9 +94,7 @@ const Sidebar = () => {
                             </li>
                             <li className="navlink">
                                 <a href="#">
-                                    <i className="material-symbols-outlined icons">
-                                        filter_alt
-                                    </i>
+                                    <FilterAltIcon />
                                     <span className="text nav-text">
                                         Filters
                                     </span>
@@ -94,9 +102,8 @@ const Sidebar = () => {
                             </li>
                             <li className="navlink">
                                 <a href="#">
-                                    <i className="material-symbols-outlined icons">
-                                        delete
-                                    </i>
+                                    <DeleteIcon />
+
                                     <span className="text nav-text">
                                         Delete
                                     </span>
@@ -104,32 +111,25 @@ const Sidebar = () => {
                             </li>
                         </ul>
                     </div>
-                    <div className="bottomcontent">
-                        <li className="">
-                            <a href="#">
-                                <i className="material-symbols-outlined icons">
-                                    settings
-                                </i>
-                                <span className="text nav-text">settings</span>
-                            </a>
-                        </li>
-                        <li className="mode">
-                            <div className="moon">
-                                <i className="material-symbols-outlined icons">
-                                    dark_mode
-                                </i>
-                                <i className="material-symbols-outlined icons moons">
-                                    light_mode
-                                </i>
-                            </div>
-                            <span className="text mode-text suns">
-                                Dark Mode
-                            </span>
-                            <div className="toggleswitch">
-                                <span className="switch"></span>
-                            </div>
-                        </li>
-                    </div>
+                </div>
+                <div className="bottomcontent">
+                    <li className="">
+                        <a href="#">
+                            <SettingsIcon />
+                            <span className="text nav-text">settings</span>
+                        </a>
+                    </li>
+                    <li className="mode" onClick={toggleMode}>
+                        <div className="moon">
+                            {isDarkMode ? <LightModeIcon /> : <DarkModeIcon />}
+                        </div>
+                        <span className="text mode-text suns">
+                            {isDarkMode ? "Light mode" : "Dark Mode"}
+                        </span>
+                        <div className="toggleswitch">
+                            <span className="switch"></span>
+                        </div>
+                    </li>
                 </div>
             </nav>
         </div>
