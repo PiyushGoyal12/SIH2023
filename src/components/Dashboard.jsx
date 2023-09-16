@@ -1,10 +1,10 @@
 import React from "react";
 import "./Dashboard.css";
-import ChatIcon from "@mui/icons-material/Chat";
-import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
-import LogoutIcon from "@mui/icons-material/Logout";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
+import notification from "./images/notification.png";
+import message from "./images/message.png";
+import exit from "./images/exit.png";
 
 const Dashboard = ({ isDarkMode, onModeToggle }) => {
     return (
@@ -17,17 +17,29 @@ const Dashboard = ({ isDarkMode, onModeToggle }) => {
                     <div className="user">
                         <div className="chat">
                             <a href="#">
-                                <ChatIcon />
+                                <img
+                                    className="icons"
+                                    src={message}
+                                    alt="newsimage"
+                                />
                             </a>
                         </div>
                         <div className="notification">
                             <a href="#">
-                                <NotificationsActiveIcon />
+                                <img
+                                    className="icons"
+                                    src={notification}
+                                    alt="newsimage"
+                                />
                             </a>
                         </div>
                         <div className="logout">
                             <a href="#">
-                                <LogoutIcon />
+                                <img
+                                    className="icons"
+                                    src={exit}
+                                    alt="newsimage"
+                                />
                             </a>
                         </div>
                     </div>
