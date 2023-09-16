@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import "./Sidebar.css";
+import news from "./images/news.png";
+import analysis from "./images/analysis.png";
+import performance from "./images/performance.png";
+import webdesign from "./images/web-design.png";
+import language from "./images/language.png";
+import filter from "./images/filter.png";
+import delet from "./images/delete.png";
+import setting from "./images/setting.png";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import FullCoverageIcon from "@mui/icons-material/RoundedCorner";
-import MonitoringIcon from "@mui/icons-material/Analytics";
-import BugReportIcon from "@mui/icons-material/BugReport";
-import WebAssetIcon from "@mui/icons-material/Web";
-import TranslateIcon from "@mui/icons-material/Translate";
-import FilterAltIcon from "@mui/icons-material/FilterAlt";
-import DeleteIcon from "@mui/icons-material/Delete";
-import SettingsIcon from "@mui/icons-material/Settings";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 
@@ -29,7 +29,7 @@ const Sidebar = () => {
             <nav className={`sidebar ${isSidebarClosed ? "close" : ""}`}>
                 <header>
                     <div className="image-text">
-                        <span className="text">Direct</span>
+                        <span className="Dtext">Direct</span>
                         <ChevronRightIcon onClick={toggleSidebar} />
                     </div>
                 </header>
@@ -46,7 +46,11 @@ const Sidebar = () => {
                             </li>
                             <li className="navlink">
                                 <a href="#">
-                                    <FullCoverageIcon />
+                                    <img
+                                        className="icons"
+                                        src={news}
+                                        alt="newsimage"
+                                    />
                                     <span className="text nav-text">
                                         News History
                                     </span>
@@ -54,7 +58,11 @@ const Sidebar = () => {
                             </li>
                             <li className="navlink">
                                 <a href="#">
-                                    <MonitoringIcon />
+                                    <img
+                                        className="icons"
+                                        src={analysis}
+                                        alt="newsimage"
+                                    />
                                     <span className="text nav-text">
                                         Analysis
                                     </span>
@@ -62,7 +70,11 @@ const Sidebar = () => {
                             </li>
                             <li className="navlink">
                                 <a href="#">
-                                    <BugReportIcon />
+                                    <img
+                                        className="icons"
+                                        src={performance}
+                                        alt="newsimage"
+                                    />
                                     <span className="text nav-text">
                                         Performances
                                     </span>
@@ -70,7 +82,11 @@ const Sidebar = () => {
                             </li>
                             <li className="navlink">
                                 <a href="#">
-                                    <WebAssetIcon />
+                                    <img
+                                        className="icons"
+                                        src={webdesign}
+                                        alt="newsimage"
+                                    />
                                     <span className="text nav-text">
                                         Websites
                                     </span>
@@ -78,7 +94,11 @@ const Sidebar = () => {
                             </li>
                             <li className="navlink">
                                 <a href="#">
-                                    <TranslateIcon />
+                                    <img
+                                        className="icons"
+                                        src={language}
+                                        alt="newsimage"
+                                    />
                                     <span className="text nav-text">
                                         Languages
                                     </span>
@@ -94,7 +114,11 @@ const Sidebar = () => {
                             </li>
                             <li className="navlink">
                                 <a href="#">
-                                    <FilterAltIcon />
+                                    <img
+                                        className="icons"
+                                        src={filter}
+                                        alt="newsimage"
+                                    />
                                     <span className="text nav-text">
                                         Filters
                                     </span>
@@ -102,7 +126,11 @@ const Sidebar = () => {
                             </li>
                             <li className="navlink">
                                 <a href="#">
-                                    <DeleteIcon />
+                                    <img
+                                        className="icons"
+                                        src={delet}
+                                        alt="newsimage"
+                                    />
 
                                     <span className="text nav-text">
                                         Delete
@@ -115,11 +143,15 @@ const Sidebar = () => {
                 <div className="bottomcontent">
                     <li className="">
                         <a href="#">
-                            <SettingsIcon />
-                            <span className="text nav-text">settings</span>
+                            <img
+                                className="icons"
+                                src={setting}
+                                alt="newsimage"
+                            />
+                            <span className="text nav-text">Settings</span>
                         </a>
                     </li>
-                    <li className="mode" onClick={toggleMode}>
+                    {/* <li className="mode" onClick={toggleMode}>
                         <div className="moon">
                             {isDarkMode ? <LightModeIcon /> : <DarkModeIcon />}
                         </div>
@@ -129,7 +161,7 @@ const Sidebar = () => {
                         <div className="toggleswitch">
                             <span className="switch"></span>
                         </div>
-                    </li>
+                    </li> */}
                 </div>
             </nav>
         </div>

@@ -9,15 +9,14 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    padding: 10px 2rem;
-    background-color: var(--primary-color);
+
     overflow: hidden;
 }
 
 .user {
     display: flex;
-    justify-content: center;
-    gap: 10;
+    justify-content: space-evenly;
+    width: 15%;
 }
 .headerwrapper i {
     color: var(--text-color);
@@ -40,7 +39,7 @@
 }
 .cards h3 {
     text-align: center;
-    font-size: 45px;
+    font-size: 28px;
 }
 .cards h3:hover {
     transition: var(--tran-03);
@@ -53,17 +52,16 @@
 }
 .card {
     overflow: hidden;
-    background-color: #090345;
+    background-color: #1c2035;
     color: white;
     text-align: center;
-    width: 240px;
-    height: 140px;
+    width: 180px;
+    height: 100px;
     padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 2rem;
     margin: 2rem;
     transform: var(--tran-03);
 }
@@ -86,7 +84,7 @@ body.dark .graph {
 
 .graph {
     overflow: hidden;
-    background-color: #090345;
+    background-color: #1c2035;
     text-align: center;
     width: 440px;
     height: 440px;
@@ -95,7 +93,6 @@ body.dark .graph {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 2rem;
     margin: 2rem;
     transform: var(--tran-03);
 }

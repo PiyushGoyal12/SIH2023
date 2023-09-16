@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poller+One&family=Roboto:wght@100&display=swap");
+
 * {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -8,9 +10,9 @@
 }
 
 :root {
-    --body-color: #e4e9f7;
+    --body-color: #11131f;
     --sidebar-color: #fff;
-    --primary-color: #090345;
+    --primary-color: #1c2035;
     --primary-color-light: #f6f5ff;
     --toggle-color: #ddd;
     --text-color: #ffffff;
@@ -41,8 +43,13 @@ body.dark .sidebar header .toggle {
     transform: rotate(180deg);
     color: var(--text-color);
 }
+
 .sidebar.close {
     width: 78px;
+}
+.icons {
+    height: 20px;
+    padding: 0px 10px;
 }
 .sidebar {
     position: fixed;
@@ -94,6 +101,8 @@ body.dark .icons {
     color: var(--text-color);
     transition: var(--tran-04);
     /* text-wrap: nowrap; */
+    display: flex;
+    justify-content: space-between;
     opacity: 1;
 }
 
@@ -101,11 +110,15 @@ body.dark .icons {
     display: flex;
     align-items: center;
 }
-header.image-text .text {
+header > .image-text > .text {
     display: flex;
     flex-direction: column;
 }
-
+.Dtext {
+    font-family: "Poller One", cursive;
+    width: 90%;
+    text-align: center;
+}
 .sidebar header .toggle {
     position: absolute;
     top: 50%;
